@@ -7,6 +7,55 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<script></script>
+		<script>
+			//IIFE Immediately Invoked Function Expression
+			//Syntaxis
+			/*
+			(function () {
+				statements
+			})();
+			*/
+
+			(function () {
+				let color = "red";
+				function imprimeColor() {
+					console.log(color);
+				}
+
+				imprimeColor();
+			})();
+
+			//-------------------------------------------------------------
+
+			function makeColorPrinter(color) {
+				let colorMesage = `The color is ${color}`;
+				return function () {
+					console.log(colorMesage);
+				};
+			}
+
+			let greenColorPrinter = makeColorPrinter("green");
+			greenColorPrinter();
+
+			function seMeAntoja(alimento) {
+				let comida = `se me antoja un ${alimento}`;
+				return function () {
+					console.log(comida);
+				};
+			}
+
+			let miAntojo = seMeAntoja("enchiladas");
+			miAntojo();
+
+			function seMeAntojaron(antojo) {
+				let antojito = `Se me antoja ${antojo}`;
+				return function () {
+					console.log(antojito);
+				};
+			}
+
+			let tengoGanasDe = seMeAntojaron("gorditas");
+			tengoGanasDe();
+		</script>
 	</body>
 </html>
